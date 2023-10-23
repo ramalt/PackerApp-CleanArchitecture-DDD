@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PackerApp.Domain\PackerApp.Domain.csproj" />
+    <ProjectReference Include="..\Shared\PackerApp.Shared\PackerApp.Shared.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

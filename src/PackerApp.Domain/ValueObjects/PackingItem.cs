@@ -6,9 +6,9 @@ public record PackingItem
 {
     public string Name { get; init; }    
     public int Quantity { get; init; }    
-    public bool IsPacked { get; init; }   
+    public bool IsPacked { get; init; } 
 
-    public PackingItem(string name, int quantity, bool isPacked)
+    public PackingItem(string name, int quantity, bool isPacked = false)
     {
         if(string.IsNullOrWhiteSpace(name))
             throw new EmptyPackingItemException();

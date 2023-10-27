@@ -1,3 +1,4 @@
+using PackerApp.Domain.Entities;
 using PackerApp.Domain.ValueObjects;
 
 namespace PackerApp.Domain.Repositories;
@@ -7,8 +8,8 @@ namespace PackerApp.Domain.Repositories;
 */
 public interface IPackingListRepository
     {
-        Task<Entities.PackingList> GetAsync(PackingListId id);
-        Task AddAsync(Entities.PackingList packingList);
-        Task UpdateAsync(Entities.PackingList packingList);
-        Task DeleteAsync(Entities.PackingList packingList);
+        Task<PackingList> GetAsync(PackingListId id);
+        Task AddAsync(PackingList packingList);
+        Task UpdateAsync(PackingList packingList);
+        Task DeleteAsync(PackingList packingList);
     }

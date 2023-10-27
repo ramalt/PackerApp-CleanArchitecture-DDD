@@ -1,8 +1,8 @@
 using PackerApp.Application.Dtos;
-using PackerApp.Domain.Repositories;
+using PackerApp.Application.Queries;
 using PackerApp.Shared.Abstractions.Queries;
 
-namespace PackerApp.Application.Queries.Handlers;
+namespace PackerApp.Infrastructure.Queries.Handlers;
 
 public class GetPackingListQueryHandler : IQueryHandler<GetPackingListQuery, PackingListDto>
 {

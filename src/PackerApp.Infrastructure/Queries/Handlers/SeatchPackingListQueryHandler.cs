@@ -1,7 +1,8 @@
 using PackerApp.Application.Dtos;
+using PackerApp.Application.Queries;
 using PackerApp.Shared.Abstractions.Queries;
 
-namespace PackerApp.Application.Queries.Handlers;
+namespace PackerApp.Infrastructure.Queries.Handlers;
 
 public class SeatchPackingListQueryHandler : IQueryHandler<SearchPackingListQuery, IEnumerable<PackingListDto>>
 {

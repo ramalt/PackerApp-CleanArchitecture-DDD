@@ -20,6 +20,7 @@ namespace PackerApp.Infrastructure.EFCore.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Version = table.Column<int>(type: "integer", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: false),
                     Localization = table.Column<string>(type: "text", nullable: false)
                 },

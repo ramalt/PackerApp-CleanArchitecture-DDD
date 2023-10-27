@@ -11,23 +11,30 @@ public static class Extensions
 {
     public static void AddCommands(this IServiceCollection services)
     {
+        var assembly = Assembly.GetCallingAssembly();
         services.AddSingleton<ICommandDispatcher, InMemoryCommandDiscpatcher>();
 
         // Auto IoC Container registration with Scrutor package from service assemblies
-        services.Scan(s => s.FromAssemblies(Assembly.GetCallingAssembly())
-                            .AddClasses(c => c.AssignableTo(typeof(ICommandHandler<>)))
-                            .AsImplementedInterfaces()
-                            .WithScopedLifetime());
+        services.Scan(
+            s =>
+                s.FromAssemblies(assembly)
+                    .AddClasses(c => c.AssignableTo(typeof(ICommandHandler<>)))
+                    .AsImplementedInterfaces()
+                    .WithScopedLifetime()
+        );
     }
 
-        public static void AddQueries(this IServiceCollection services)
+    public static void AddQueries(this IServiceCollection services)
     {
-        services.AddSingleton<IQueryDispatcher, InMemoryQueryDispatcher>();
+        var assembly = Assembly.GetCallingAssembly();
 
-        // Auto IoC Container registration with Scrutor package from service assemblies
-        services.Scan(s => s.FromAssemblies(Assembly.GetCallingAssembly())
-                            .AddClasses(c => c.AssignableTo(typeof(IQueryHandler<,>)))
-                            .AsImplementedInterfaces()
-                            .WithScopedLifetime());
+        services.AddSingleton<IQueryDispatcher, InMemoryQueryDispatcher>();
+        services.Scan(
+            s =>
+                s.FromAssemblies(assembly)
+                    .AddClasses(c => c.AssignableTo(typeof(IQueryHandler<,>)))
+                    .AsImplementedInterfaces()
+                    .WithScopedLifetime()
+        );
     }
 }

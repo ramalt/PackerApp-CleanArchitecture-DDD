@@ -63,6 +63,9 @@ namespace PackerApp.Infrastructure.EFCore.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int>("Version")
+                        .HasColumnType("integer");
+
                     b.HasKey("Id");
 
                     b.ToTable("PackingLists", "packings");

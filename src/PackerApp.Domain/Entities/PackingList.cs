@@ -11,7 +11,7 @@ public class PackingList : AggregateRoot<PackingListId>
     private PackingListName _name;
     private Localization _localization;
     private readonly List<PackingItem> _items = new();
-
+    private PackingList(){}
     public PackingList(Guid id, PackingListName name, Localization localization)
     {
         Id = id;

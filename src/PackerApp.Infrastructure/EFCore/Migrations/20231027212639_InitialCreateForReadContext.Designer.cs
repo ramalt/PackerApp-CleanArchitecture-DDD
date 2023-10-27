@@ -12,7 +12,7 @@ using PackerApp.Infrastructure.EFCore.Contexts;
 namespace PackerApp.Infrastructure.EFCore.Migrations
 {
     [DbContext(typeof(ApplicationReadDbContext))]
-    [Migration("20231027183228_InitialCreateForReadContext")]
+    [Migration("20231027212639_InitialCreateForReadContext")]
     partial class InitialCreateForReadContext
     {
         /// <inheritdoc />
@@ -65,6 +65,9 @@ namespace PackerApp.Infrastructure.EFCore.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<int>("Version")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 

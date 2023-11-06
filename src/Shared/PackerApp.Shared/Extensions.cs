@@ -1,8 +1,10 @@
 using System.Reflection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using PackerApp.Shared.Abstractions.Commands;
 using PackerApp.Shared.Abstractions.Queries;
 using PackerApp.Shared.Commands;
+using PackerApp.Shared.Exceptions;
 using PackerApp.Shared.Queries;
 
 namespace PackerApp.Shared;
@@ -36,5 +38,14 @@ public static class Extensions
                     .AsImplementedInterfaces()
                     .WithScopedLifetime()
         );
+    }
+
+    public static void AddShared(this IServiceCollection services)
+    {
+        services.AddScoped<ExceptionMiddleware>();
+    }
+    public static void UseShared(this IApplicationBuilder app)
+    {
+        app.UseMiddleware<ExceptionMiddleware>();
     }
 }

@@ -24,4 +24,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\PackerApp.Domain\PackerApp.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

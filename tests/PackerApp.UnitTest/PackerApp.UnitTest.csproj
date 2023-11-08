@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\PackerApp.Domain\PackerApp.Domain.csproj" />
+    <ProjectReference Include="..\..\src\PackerApp.Application\PackerApp.Application.csproj" />
   </ItemGroup>
 
 </Project>
